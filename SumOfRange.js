@@ -11,6 +11,7 @@ The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it wo
 
 // === Solution ===
 
+// Range function
 const range = (start, end) => {
   let arr = [],
     i;
@@ -21,3 +22,10 @@ const range = (start, end) => {
 };
 
 console.log(range(1, 5));
+
+// Sum function
+const sum = (arr) => {
+  return arr.reduce((prev, curr) => prev + curr);
+};
+
+console.log(sum(range(1, 5)));
