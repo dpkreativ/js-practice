@@ -13,19 +13,29 @@ The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it wo
 
 // Range function
 const range = (start, end) => {
+  // Initialize variables
   let arr = [],
     i;
-  for (i = start; i <= end; i++) {
-    arr.push(i);
+
+  // Conditionals
+  if (start < end) {
+    for (i = start; i <= end; i++) {
+      arr.push(i);
+    }
+  } else {
+    for (i = start; i >= end; i--) {
+      arr.push(i);
+    }
   }
+
   return arr;
 };
 
-console.log(range(1, 5));
+console.log(range(5, 1));
 
 // Sum function
 const sum = (arr) => {
   return arr.reduce((prev, curr) => prev + curr);
 };
 
-console.log(sum(range(1, 5)));
+console.log(sum(range(5, 1)));
