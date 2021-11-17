@@ -8,3 +8,16 @@
 
 The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it works with negative step values so that range(5, 2, -1) produces [5, 4, 3, 2];
 */
+
+// === Solution ===
+
+const range = (start, end) => {
+  let arr = [],
+    i;
+  for (i = start; i <= end; i++) {
+    arr.push(i);
+  }
+  return arr;
+};
+
+console.log(range(1, 5));
