@@ -33,11 +33,11 @@ const range = (start, end, step = 1) => {
   return arr;
 };
 
-console.log(range(1, 10, 3));
+console.log(range(10, 1, 1));
 
 // Sum function
 const sum = (arr) => {
-  return arr.reduce((prev, curr) => prev + curr);
+  return arr.length !== 0 ? arr.reduce((prev, curr) => prev + curr) : 0;
 };
 
-console.log(sum(range(1, 5)));
+console.log(sum(range(10, 1, 1)));
