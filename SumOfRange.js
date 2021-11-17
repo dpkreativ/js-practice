@@ -33,7 +33,7 @@ const range = (start, end, step = 1) => {
   return arr;
 };
 
-console.log(range(10, 1, 1));
+console.log(range(1, 10, 3));
 
 // Sum function
 const sum = (arr) => {
