@@ -12,18 +12,18 @@ The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it wo
 // === Solution ===
 
 // Range function
-const range = (start, end) => {
+const range = (start, end, step = 1) => {
   // Initialize variables
   let arr = [],
     i;
 
   // Conditionals
   if (start < end) {
-    for (i = start; i <= end; i++) {
+    for (i = start; i <= end; i += step) {
       arr.push(i);
     }
   } else {
-    for (i = start; i >= end; i--) {
+    for (i = start; i >= end; i += step) {
       arr.push(i);
     }
   }
@@ -31,11 +31,11 @@ const range = (start, end) => {
   return arr;
 };
 
-console.log(range(5, 1));
+console.log(range(1, 10, 2));
 
 // Sum function
 const sum = (arr) => {
   return arr.reduce((prev, curr) => prev + curr);
 };
 
-console.log(sum(range(5, 1)));
+console.log(sum(range(1, 5)));
