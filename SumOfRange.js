@@ -18,20 +18,22 @@ const range = (start, end, step = 1) => {
     i;
 
   // Conditionals
-  if (start < end) {
+  if (start < end && step > 0) {
     for (i = start; i <= end; i += step) {
       arr.push(i);
     }
-  } else {
+  } else if (start > end && step < 0) {
     for (i = start; i >= end; i += step) {
       arr.push(i);
     }
+  } else {
+    arr;
   }
 
   return arr;
 };
 
-console.log(range(1, 10, 2));
+console.log(range(10, 1, 1));
 
 // Sum function
 const sum = (arr) => {
