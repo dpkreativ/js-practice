@@ -14,3 +14,15 @@ Sample Output:
 
 2
 */
+
+const minLoss = (prices) => {
+  let losses = [], diff;
+  for (let i = 0; i < prices.length; i++){
+    diff = prices[i] - prices[i + 1];
+    losses.push(diff);
+  }
+  losses.sort((a, b) => a - b);
+  return losses[0];
+}
+
+console.log(minLoss([10, 5, 3]));
