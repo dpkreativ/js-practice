@@ -32,3 +32,32 @@ Example 5:
 Input: S= "{()}"
 Output: valid
 */
+
+const L = ['(', '{', '['];
+const R = [')', '}', ']'];
+
+const validParenthesis = (input) => {
+  let i = 0, j, temp = [], strArr = input.split('');
+  
+  while (i < strArr.length) {
+    if (L.includes(strArr[i])) {
+      temp.push(strArr[i]);
+      console.log(temp);
+      i++;
+    } else {
+      j = R.indexOf(strArr[i]);
+      if (temp[-1] === L[j]) {
+        temp.pop();
+        i++;
+      } else {
+        return 'input is invalid';
+      }
+    }
+  }
+  
+  if (temp.length === 0) {
+    return 'input is valid';
+  }
+}
+
+console.log(validParenthesis('{}[[]]'));
