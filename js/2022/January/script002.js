@@ -37,34 +37,35 @@ Input: s = "[(])"
 Output: invalid
 */
 
+// Test cases
+let test1 = "{}[[]]"; // expect: valid
+let test2 = "{[](()[])}"; // expect: valid
+let test3 = "(]"; // expect: invalid
+let test4 = "([))]"; // expect: invalid
+let test5 = "{()}"; // expect: valid
+let test6 = "[(])"; // expect: invalid
+let test7 = "(])"; // expect: invalid
+
 const L = ["(", "{", "["];
 const R = [")", "}", "]"];
 
-const validParenthesis = (input) => {
-  let i = 0,
-    j,
-    temp = [],
-    strArr = input.split("");
+const validParenthesis = (s) => {
+  if (s.length % 2 !== 0) return "invalid";
 
-  while (i < strArr.length) {
-    if (L.includes(strArr[i])) {
-      temp.push(strArr[i]);
-      console.log(temp);
-      i++;
+  let strArr = s.split("");
+
+  let temp = [];
+  strArr.forEach((el) => {
+    if (L.includes(el)) {
+      temp.push(el);
     } else {
-      j = R.indexOf(strArr[i]);
-      if (temp[-1] === L[j]) {
-        temp.pop();
-        i++;
-      } else {
-        return "input is invalid";
-      }
+      let i = R.indexOf(el),
+        j = temp.length - 1;
+      if (temp[j] === L[i]) temp.pop();
     }
-  }
+  });
 
-  if (temp.length === 0) {
-    return "input is valid";
-  }
+  return temp.length === 0 ? "valid" : "invalid";
 };
 
-console.log(validParenthesis("{}[[]]"));
+console.log(validParenthesis(test7));
