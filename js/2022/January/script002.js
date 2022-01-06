@@ -50,7 +50,7 @@ const L = ["(", "{", "["];
 const R = [")", "}", "]"];
 
 const validParenthesis = (s) => {
-  if (s.length % 2 !== 0) return "invalid";
+  if (s.length % 2 !== 0 || R.includes(s[0])) return "invalid";
 
   let strArr = s.split("");
 
