@@ -1,7 +1,7 @@
 /*
 Valid Parentheses
 
-Given a string s containing just the characters '(", ')', (, '}', 'I' and ']', determine if the input string is valid.
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
 
@@ -9,36 +9,43 @@ An input string is valid if:
 2. Open brackets must be closed in the correct order.
 
 Constraints:
-1 <= s. length <= 104
-s consists of parentheses only ({[}])
+1 <= s.length <= 104
+s consists of parentheses only => (){}[]
 
 Example 1:
-Input: s="{}[[]]"
+Input: s = "{}[[]]"
 Output: valid
 
 Example 2:
-Input: S = "{[](()[])}"
+Input: s = "{[](()[])}"
 Output: valid
 
 Example 3:
-Input: S = "(]"
+Input: s = "(]"
 Output: invalid
 
 Example 4:
-Input: S = "([))]"
+Input: s = "([))]"
 output: invalid
 
 Example 5:
-Input: S= "{()}"
+Input: s = "{()}"
 Output: valid
+
+Example 6:
+Input: s = "[(])"
+Output: invalid
 */
 
-const L = ['(', '{', '['];
-const R = [')', '}', ']'];
+const L = ["(", "{", "["];
+const R = [")", "}", "]"];
 
 const validParenthesis = (input) => {
-  let i = 0, j, temp = [], strArr = input.split('');
-  
+  let i = 0,
+    j,
+    temp = [],
+    strArr = input.split("");
+
   while (i < strArr.length) {
     if (L.includes(strArr[i])) {
       temp.push(strArr[i]);
@@ -50,14 +57,14 @@ const validParenthesis = (input) => {
         temp.pop();
         i++;
       } else {
-        return 'input is invalid';
+        return "input is invalid";
       }
     }
   }
-  
-  if (temp.length === 0) {
-    return 'input is valid';
-  }
-}
 
-console.log(validParenthesis('{}[[]]'));
+  if (temp.length === 0) {
+    return "input is valid";
+  }
+};
+
+console.log(validParenthesis("{}[[]]"));
