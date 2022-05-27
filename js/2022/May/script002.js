@@ -9,18 +9,25 @@ function countingValleys(steps, path) {
     checker = false,
     i;
 
-  for (i = 0; i < 8; i++) {
+  for (i = 0; i < steps; i++) {
     let el = pathArray[i];
 
     if (el === 'U') {
       base++;
-      checker = false;
+
+      if (base >= 0 && checker === true) {
+        checker = false;
+      }
     } else {
       base--;
-      base < 0 && checker === true ? valCount++ : null;
+
+      if (base < 0 && checker === false) {
+        valCount++;
+        checker = true;
+      }
     }
   }
-  console.log(pathArray);
+  console.log(valCount);
 }
 
 countingValleys(int, str);
