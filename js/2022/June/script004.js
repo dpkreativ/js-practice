@@ -3,7 +3,9 @@
 const intArray = [73, 67, 38, 33];
 
 function gradingStudents(grades) {
-  console.log(grades);
+  return grades.map((grade) =>
+    grade < 38 || grade % 5 < 3 ? grade : grade + (5 - (grade % 5))
+  );
 }
 
-gradingStudents(intArray);
+console.log(gradingStudents(intArray));
