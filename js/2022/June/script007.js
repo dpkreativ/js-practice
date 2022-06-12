@@ -16,6 +16,7 @@ function breakingRecords(scores) {
       b = el;
     }
   });
+
   return bestWorst;
 }
 
