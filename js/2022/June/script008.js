@@ -27,20 +27,26 @@ What I can do:
 const test = 150;
 
 function atm(input) {
-  const error = 'Invalid amount. Try a multiple of $20, $50, or $100.',
-    rem = `${input % 20}`,
-    isTen = Number(rem) === 10;
+  const error = 'Invalid amount. Try a multiple of $20, $50, or $100.', // error message
+    rem = `${input % 20}`, // get remainder from dividing input by 20
+    isTen = Number(rem) === 10; // check if remainder equals 10
 
-  let twenties = Math.floor(input / 20),
-    notes = [0, 0, 0];
+  let twenties = Math.floor(input / 20), // get number of 20s in input
+    notes = [0, 0, 0]; // initial array for the denominations
 
+  // - Check if the number of 20s in input is greater than zero
+  // - Check if the remainder has 0 in it (between 0 and 20, only 10 and 0 return true)
+  // - Change notes variable to display error message if none of the conditions are met
   if (twenties > 0 && rem.includes('0')) {
     if (twenties <= 2) {
+      // - Check if number of 20s is less than or equal to 2 (used this to catch an edge case where the input equals 30, as the ATM will be unable to dispense $10)
       isTen ? (notes = error) : (notes[2] = twenties);
     } else if (!isTen) {
+      // - If the remainder is not equal to 10, this should run (it ensures that the 20s add up to a 100 if there won't be any 10s remaining)
       notes[0] = Math.floor(twenties / 5);
       notes[2] = twenties % 5;
     } else {
+      // - For cases where a 10 will remain, this part subtracts two twenties, and just assumes a $50, then calculates the rest of the denominations.
       twenties = twenties - 2;
       notes[0] = Math.floor(twenties / 5);
       notes[1]++;
@@ -50,6 +56,7 @@ function atm(input) {
     notes = error;
   }
 
+  // - Finally, return the notes array, or the error message (based on what the input gives)
   return notes;
 }
 
