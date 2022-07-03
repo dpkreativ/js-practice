@@ -4,16 +4,23 @@ const user = new Map([
   ['First Name', 'Divine'],
   ['Last Name', 'Orji'],
   ['Age', 24],
-  [true, 'Cheese'],
+  [false, 'Dance'],
 ]);
 
-console.log(user.size);
+user.set('Pet', 'Gary');
+
+console.log(user.delete('Age'));
+
+user.forEach((value) => {
+  console.log(value);
+});
 
 /*
-Map(4) {
-  'First Name' => 'Divine',       
-  'Last Name' => 'Orji',
+Map(5) {
+  'First Name' => 'Divine',
+  'Last Name' => 'Orji',   
   'Age' => 24,
-  true => 'Cheese'
+  false => 'Dance',        
+  'Pet' => 'Gary'
 }
 */
