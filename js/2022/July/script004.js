@@ -1,4 +1,4 @@
-// Array splice vs slice examples
+// Array splice
 
 // ==== Array.prototype.splice() ====
 // INITIAL ARRAY
