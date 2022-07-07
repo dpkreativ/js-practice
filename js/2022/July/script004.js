@@ -6,3 +6,15 @@ const gadgets = ['phone', 'laptop', 'headphones', 'earbuds'];
 
 gadgets.splice(3, 0, 'solar lamp', 'clock', 'watch');
 console.log(gadgets);
+
+/*
+[
+  'phone',     
+  'laptop',    
+  'headphones',
+  'solar lamp',
+  'clock',     
+  'watch',     
+  'earbuds'    
+]
+*/
