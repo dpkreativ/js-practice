@@ -1,5 +1,3 @@
-// Array splice
-
 // ==== Array.prototype.splice() ====
 // INITIAL ARRAY
 const gadgets = ['phone', 'laptop', 'headphones', 'earbuds'];
