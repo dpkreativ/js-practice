@@ -35,3 +35,16 @@ console.log(noTomatoes);
 /*
 [ 'pumpkin leaves', 'eggs', 'meat', 'fish', 'onions' ]
 */
+
+// ==== Example 3 ====
+/*
+-> copy three elements backwards from the end of the array
+*/
+const lastThree = grocery.slice(-3);
+
+// -> print to console
+console.log(lastThree);
+
+/*
+[ 'meat', 'fish', 'onions' ]
+*/
