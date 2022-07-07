@@ -4,6 +4,7 @@
 // INITIAL ARRAY
 const gadgets = ['phone', 'laptop', 'headphones', 'earbuds'];
 
+// Example 1
 gadgets.splice(3, 0, 'solar lamp', 'clock', 'watch');
 console.log(gadgets);
 
