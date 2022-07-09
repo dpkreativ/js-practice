@@ -6,8 +6,8 @@ const trySet = new Set();
 trySet.add('Hello');
 trySet.add('Bye');
 
-// trySet.add(school);
-// trySet.delete(school);
+trySet.add(school);
+trySet.delete(school);
 
 console.log(trySet);
 
