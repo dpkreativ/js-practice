@@ -4,6 +4,7 @@ let school = { school: 'MECDA' };
 const trySet = new Set();
 
 trySet.add('Hello');
+trySet.add('Hi');
 trySet.add('Bye');
 
 trySet.add(school);
