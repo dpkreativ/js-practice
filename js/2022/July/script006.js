@@ -4,7 +4,8 @@
  */
 
 let getForm = document.getElementById('test-form');
+let getInput = document.getElementById('test-input');
 
-getForm.addEventListener('submit', (e) => {
-  console.log(e.target.value);
+getForm.addEventListener('submit', () => {
+  console.log(getInput.value);
 });
