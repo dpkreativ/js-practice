@@ -11,15 +11,14 @@ const string6 = 'OrjiDivine';
 // console.log(regex1.test(string4));
 
 // Phone number validation
-
-const validNumberPattern = /^(0|\+234)(?<network>\d{3})\d{7}$/;
-
 const n1 = '+2349021824073';
 const n2 = '789210';
 const n3 = '+7128da';
 const n4 = '08163791230';
 
 function testRegex(input) {
+  const validNumberPattern = /^(0|\+234)(?<network>\d{3})\d{7}$/;
+
   if (validNumberPattern.test(input)) {
     const getNetwork = input.match(validNumberPattern).groups.network;
     console.log(getNetwork);
