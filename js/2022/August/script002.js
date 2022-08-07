@@ -12,11 +12,11 @@ const string6 = 'OrjiDivine';
 
 // Phone number validation
 
-const validNumberPattern = /^(0|\+234)\d{10}$/;
+const validNumberPattern = /^(0|\+234)(?<network>\d{3})\d{7}$/;
 
 const n1 = '+2349021824073';
 const n2 = '789210';
 const n3 = '+7128da';
 const n4 = '09021824073';
 
-console.log(validNumberPattern.test(n4));
+console.log(n1.match(validNumberPattern).groups.network);
