@@ -17,6 +17,15 @@ const validNumberPattern = /^(0|\+234)(?<network>\d{3})\d{7}$/;
 const n1 = '+2349021824073';
 const n2 = '789210';
 const n3 = '+7128da';
-const n4 = '09021824073';
+const n4 = '08163791230';
 
-console.log(n1.match(validNumberPattern).groups.network);
+function testRegex(input) {
+  if (validNumberPattern.test(input)) {
+    const getNetwork = input.match(validNumberPattern).groups.network;
+    console.log(getNetwork);
+  } else {
+    console.log(`${input} does not match regex pattern.`);
+  }
+}
+
+testRegex(n4);
