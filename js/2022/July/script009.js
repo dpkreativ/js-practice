@@ -7,7 +7,7 @@
 // The pattern should validate emails that have only letters and numbers in the "user" part (the part before the "@")
 // To test your pattern, uncomment the 7 console logs below. In the console, they should all return the expected boolean.
 
-const emailRegex = /[\w.]@arit.dev/;
+const emailRegex = /[\w.]@arit.dev$/;
 
 console.log(`This should return TRUE: ${emailRegex.test('hello@arit.dev')}`);
 
