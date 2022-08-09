@@ -11,3 +11,5 @@ function repeatedString(s, n) {
 
   return s;
 }
+
+console.log(repeatedString('abcac', 15));
