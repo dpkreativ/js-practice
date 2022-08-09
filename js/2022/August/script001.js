@@ -9,7 +9,14 @@ function repeatedString(s, n) {
     s = s + s;
   }
 
-  return s;
+  const strArr = s.split('');
+  let count = 0;
+
+  for (let i = 0; i < n; i++) {
+    strArr[i] === 'a' ? count++ : null;
+  }
+
+  return count;
 }
 
 console.log(repeatedString('abcac', 15));
