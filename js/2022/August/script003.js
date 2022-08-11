@@ -32,3 +32,50 @@
  * while / for => K times
  *
  */
+
+// Function to determine the position
+function LastElement(arr, N, K) {
+  // Decrement all array values by 1
+  // so it is easy to jump
+  for (let i = 0; i < N; i++) {
+    --arr[i];
+  }
+
+  // Initialize the unordered Map
+  let visit = new Array(N);
+
+  // Initialize elem and len
+  let elem = 0,
+    len = 0;
+
+  // Traverse until K is not 0
+  //or loop is detected
+  while (K && !visit[elem]) {
+    // Store len in map
+    visit[elem] = ++len;
+
+    // Decrement K for a jump
+    K--;
+
+    // Jump from one element to another
+    elem = arr[elem];
+  }
+
+  // After loop is over, take modulo of K
+  K = K % (len + 1 - visit[elem]);
+
+  // Now traverse loop K times
+  for (let i = 1; i <= K; i++) {
+    elem = arr[elem];
+  }
+  // Lastly return the element
+  return elem + 1;
+}
+
+// Driver code
+
+let arr = [3, 2, 4, 1];
+let N = 4;
+let K = 5;
+let ans = LastElement(arr, N, K);
+document.write(ans);
